@@ -28,7 +28,7 @@ public class SquareEquation
         }
         else if (d < 0)
         {
-
+             
         }
         else
         {
