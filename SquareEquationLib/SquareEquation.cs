@@ -4,12 +4,14 @@ public class SquareEquation
 {
     public static double[] Solve(double a, double b, double c)
     {
-        if (a == 0 || double.IsNaN(a) || double.IsNaN(b) || double.IsNaN(c) || double.IsInfinity(a) || double.IsInfinity(b) || double.IsInfinity(c)) 
+        double eps = Math.Pow(10, -9);
+
+        if ((a > -eps && a < eps) || double.IsNaN(a) || double.IsNaN(b) || double.IsNaN(c) || double.IsInfinity(a) || double.IsInfinity(b) || double.IsInfinity(c)) 
         {
             throw new System.ArgumentException();
         }
 
-        double eps = Math.Pow(10, -9);
+       
         double d = b * b - 4 * c;
         double[] answer = new double[2];
 
