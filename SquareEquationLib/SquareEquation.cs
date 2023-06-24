@@ -14,28 +14,28 @@ public class SquareEquation
         c = c / a;
 
         double d = b * b - 4 * c;
-        double[] answer_zero = new double[]{};
-        double[] answer_one = new double[1];
-        double[] answer_two = new double[2];
+        double[] answerZero = new double[] { };
+        double[] answerOne = new double[1];
+        double[] answerTwo = new double[2];
 
         if (d <= -eps)
         {
-            return answer_zero;
+            return answerZero;
         }
         else if (-eps < d && d < eps)
         {
             double x1 = -(b) / 2;
-            answer_one[0] = x1;
-            return answer_one;
+            answerOne[0] = x1;
+            return answerOne;
         }
         else
         {
             double x1 = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
             double x2 = c / x1;
-            answer_two[0] = x1;
-            answer_two[1] = x2;
-            return answer_two;
+            answerTwo[0] = x1;
+            answerTwo[1] = x2;
+            return answerTwo;
         }
-        
+
     }
 }
