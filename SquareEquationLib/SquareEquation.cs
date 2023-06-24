@@ -31,7 +31,7 @@ public class SquareEquation
         else
         {
             double x1 = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
-            double x2 = c / twoRoots[0];
+            double x2 = c / x1;
             answer_two[0] = x1;
             answer_two[1] = x2;
             return answer_two;
