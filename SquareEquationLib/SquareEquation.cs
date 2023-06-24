@@ -15,30 +15,23 @@ public class SquareEquation
         double d = b * b - 4 * c;
         double[] answer = new double[2];
 
-        if (Math.Abs(d) < eps)
+        if (d <= -eps)
         {
-            double x1 = -b / (2 * a);
-            double x2 = x1;
-            answer = new double[] { x1, x2 };
-            
+             return answer;
         }
-        else if (d == 0) 
+        else if (-eps < d && d < eps) 
         {
             double x1 = -b / (2 * a);
             answer = new double[] { x1};
-            
-        }
-        else if (d < 0)
-        {
-             
+            return answer;
         }
         else
         {
             double x1 = (-b + Math.Sqrt(d)) / (2 * a);
             double x2 = (-b - Math.Sqrt(d)) / (2 * a);
             answer = new double[] { x1, x2 };
-            
+            return answer;
         }
-        return answer;
+        
     }
 }
