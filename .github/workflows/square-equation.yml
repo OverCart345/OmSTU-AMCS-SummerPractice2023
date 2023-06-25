@@ -29,7 +29,4 @@ jobs:
         run: dotnet build SquareEquationLib.Tests
 
       - name: Testing
-        run: dotnet test SquareEquationLib.Tests
-
-      - name: Codecov
-        uses: codecov/codecov-action@v1
+        run: dotnet test SquareEquationLib.Tests --collect:"XPlat Code Coverage"
