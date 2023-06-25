@@ -22,7 +22,7 @@ public class SquareEquation
         {
             return answerZero;
         }
-        else if (-eps < d && d < eps)
+        else if (-eps < d & d < eps)
         {
             double x1 = -(b) / 2;
             answerOne[0] = x1;
