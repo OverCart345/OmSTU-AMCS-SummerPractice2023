@@ -2,7 +2,7 @@ name: square equation test
 
 on:
   push:
-    branches: ["square_equation"]
+    branches: ["UnitTest"]
 
 jobs:
   build:
@@ -17,10 +17,16 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEquationLib
+        run: dotnet restore SquareEquationLib && dotnet restore SquareEquationLib.Tests
 
       - name: Build
         run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Test
         run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+
+      - name: Build2
+        run: dotnet build SquareEquationLib.Tests
+
+      - name: Testing
+        run: dotnet test SquareEquationLib.Tests --collect:"XPlat Code Coverage"
