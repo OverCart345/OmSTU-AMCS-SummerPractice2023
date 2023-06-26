@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareEquationLib.Tests", "SquareEquationLib.Tests.csproj", "{D516548D-55A5-4FC9-90F9-A68358D3AD6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareEquationLib.Tests", "SquareEquationLib.Tests\SquareEquationLib.Tests.csproj", "{F149FE45-630C-4DB6-AA84-EF92BD1780BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D516548D-55A5-4FC9-90F9-A68358D3AD6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D516548D-55A5-4FC9-90F9-A68358D3AD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D516548D-55A5-4FC9-90F9-A68358D3AD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D516548D-55A5-4FC9-90F9-A68358D3AD6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F149FE45-630C-4DB6-AA84-EF92BD1780BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F149FE45-630C-4DB6-AA84-EF92BD1780BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F149FE45-630C-4DB6-AA84-EF92BD1780BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F149FE45-630C-4DB6-AA84-EF92BD1780BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
