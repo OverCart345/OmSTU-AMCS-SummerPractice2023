@@ -17,16 +17,10 @@ jobs:
           dotnet-version: 7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEquationLib && dotnet restore SquareEquationLib.Tests
+        run: dotnet restore SquareEquationLib/
 
       - name: Build
-        run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
+        run: dotnet build SquareEquationLib/ --no-restore /p:ContinuousIntegrationBuild=true
 
-      - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
-
-      - name: Build2
-        run: dotnet build SquareEquationLib.Tests
-
-      - name: Testing
-        run: dotnet test SquareEquationLib.Tests --collect:"XPlat Code Coverage"
+      - name: Unittest and coverage
+        run: dotnet test SquareEquationLib.Tests /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
