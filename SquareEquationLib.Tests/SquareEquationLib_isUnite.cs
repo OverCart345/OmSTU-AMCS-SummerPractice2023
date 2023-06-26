@@ -5,13 +5,15 @@ namespace SquareEquationLib.Tests;
 
 public class SquareEquationLib_isUnite
 {
+
     [Fact]
     public void Solve_ReturnsTwoRoots()
     {
         double[] expected = new double[] { -3, 2 };
         double[] actual = SquareEquation.Solve(1, 1, -6);
 
-        Assert.Equal(expected, actual);
+        Assert.Equal(expected.Length, actual.Length);
+        Assert.True(expected.SequenceEqual(actual, EqualityComparer<double>.Default));
     }
 
     [Fact]
@@ -20,16 +22,16 @@ public class SquareEquationLib_isUnite
         double[] expected = new double[] { 4 };
         double[] actual = SquareEquation.Solve(1, -8, 16);
 
-        Assert.Equal(expected, actual);
+        Assert.Equal(expected.Length, actual.Length);
+        Assert.True(expected.SequenceEqual(actual, EqualityComparer<double>.Default));
     }
 
     [Fact]
     public void Solve_ReturnsEmpty()
     {
-        double[] expected = new double[] { };
         double[] actual = SquareEquation.Solve(2, 1, 4);
 
-        Assert.Equal(expected, actual);
+        Assert.Empty(actual);
     }
 
 
