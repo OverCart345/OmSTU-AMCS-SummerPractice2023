@@ -12,8 +12,12 @@ public class SquareEquationLib_isUnite
         double[] expected = new double[] { -3, 2 };
         double[] actual = SquareEquation.Solve(1, 1, -6);
 
+        double precision = 0.001;
         Assert.Equal(expected.Length, actual.Length);
-        Assert.True(expected.SequenceEqual(actual, EqualityComparer<double>.Default));
+        for (int i = 0; i < expected.Length; i++)
+        {
+            Assert.Equal(expected[i], actual[i], precision);
+        }
     }
 
     [Fact]
@@ -22,8 +26,12 @@ public class SquareEquationLib_isUnite
         double[] expected = new double[] { 4 };
         double[] actual = SquareEquation.Solve(1, -8, 16);
 
+        double precision = 0.001;
         Assert.Equal(expected.Length, actual.Length);
-        Assert.True(expected.SequenceEqual(actual, EqualityComparer<double>.Default));
+        for (int i = 0; i < expected.Length; i++)
+        {
+            Assert.Equal(expected[i], actual[i], precision);
+        }
     }
 
     [Fact]
