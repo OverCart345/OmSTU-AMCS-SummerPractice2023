@@ -29,4 +29,4 @@ jobs:
         run: dotnet build SquareEquationLib.Tests
         
       - name: Unittest and coverage
-        run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
+        run: dotnet test SquareEquationLib.Tests /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
