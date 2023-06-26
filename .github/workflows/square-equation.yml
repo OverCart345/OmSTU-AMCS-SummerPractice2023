@@ -16,9 +16,6 @@ jobs:
         with:
           dotnet-version: 7.0.x
 
-      - name: Install coverlet
-        run: dotnet tool install --global coverlet.console
-
       - name: Restore dependencies
         run: dotnet restore SquareEquationLib && dotnet restore SquareEquationLib.Tests
 
@@ -30,12 +27,6 @@ jobs:
 
       - name: Build2
         run: dotnet build SquareEquationLib.Tests
-
-      - name: Testing
-        run: dotnet test SquareEquationLib.Tests --collect:"XPlat Code Coverage" --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./TestResults/
-
-      - name: Upload code coverage results
-        uses: actions/upload-artifact@v2
-        with:
-          name: CodeCoverage
-          path: ./TestResults/
+        
+      - name: Unittest and coverage
+        run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
