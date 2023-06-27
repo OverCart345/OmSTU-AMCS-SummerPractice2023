@@ -1,0 +1,25 @@
+name: broken
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore SalonLib
+
+      - name: Build
+        run: dotnet build SalonLib --no-restore /p:ContinuousIntegrationBuild=true
+
+      - name: Test
+        run: dotnet test SalonLib.Test
