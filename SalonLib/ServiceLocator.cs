@@ -9,6 +9,7 @@ public class ServiceLocator
         store.Add("Читать стихи", () => "В читальном зале");
         store.Add("Петь романсы", () => "У рояля");
         store.Add("Писать статьи", () => "В кабинете");
+        store.Add("Играть в карты", () => "За карточным столом");
     }
 
     public static string GetService(string key)
