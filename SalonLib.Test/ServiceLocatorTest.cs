@@ -17,7 +17,7 @@ public class ServiceLocatorTest
         var actual = SalonLib.ServiceLocator.GetService("Петь романсы");
         Assert.Equal(expected, actual);
     }
-}
+
     [Fact]
     public void Service3Test()
     {
