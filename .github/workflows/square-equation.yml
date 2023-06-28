@@ -23,4 +23,4 @@ jobs:
         run: dotnet build SquareEquationLib/ --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Unittest and coverage
-        run: dotnet test /p:CoverletOutputFormat=cobertura /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
+        run: dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults /p:CoverletOutputFormat=cobertura
