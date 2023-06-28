@@ -41,6 +41,38 @@ public class UnitTest1
             }
         }
 
+        [Then(@"квадратное уравнение имеет два корня \((.*), (.*)\) кратности один")]
+        public void ThenTwoRoots(double root1, double root2)
+        {
+            if (root1 == roots[0] && root2 == roots[1])
+            {
+                Assert.Equal(root1, roots[0], precision);
+                Assert.Equal(root2, roots[1], precision);
+            }
+            else
+            {
+                Assert.Equal(root1, roots[1], precision);
+                Assert.Equal(root2, roots[0], precision);
+            }
+        }
+
+        [Then(@"квадратное уравнение имеет один корень (.*) кратности два")]
+        public void ThenOneRoots(double root)
+        {
+            Assert.Equal(root, roots[0], precision);
+        }
+
+        [Then(@"множество корней квадратного уравнения пустое")]
+        public void ThenZeroRoots()
+        {
+            Assert.Empty(roots);
+        }
+
+        [Then(@"выбрасывается исключение ArgumentException")]
+        public void ThenEx()
+        {
+            Assert.Equal("Invalid Values", exception.Message);
+        }
 
         
     }
