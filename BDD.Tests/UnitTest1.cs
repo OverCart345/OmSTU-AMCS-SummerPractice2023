@@ -69,7 +69,7 @@ public class UnitTest1
         }
 
         [Then(@"выбрасывается исключение ArgumentException")]
-        public void ThenВыбрасываетсяИсключениеArgumentException()
+        public void ThenEx()
         {
             Assert.Equal("Invalid Values", exception.Message);
         }
