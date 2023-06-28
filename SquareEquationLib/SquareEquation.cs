@@ -4,11 +4,11 @@ public class SquareEquation
 {
     public static double[] Solve(double a, double b, double c)
     {
-        double eps = 1e-9;
+        double eps = 1e-6;
 
         if ((a > -eps && a < eps) || double.IsNaN(a) || double.IsNaN(b) || double.IsNaN(c) || double.IsInfinity(a) || double.IsInfinity(b) || double.IsInfinity(c))
         {
-            throw new System.ArgumentException();
+            throw new System.ArgumentException("Invalid Values");
         }
         b = b / a;
         c = c / a;
