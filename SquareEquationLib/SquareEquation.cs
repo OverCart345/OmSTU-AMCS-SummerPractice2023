@@ -28,9 +28,17 @@ public class SquareEquation
             answerOne[0] = x1;
             return answerOne;
         }
+        else if (b < eps)
+        {
+            double x1 = -((b + Math.Sqrt(d)) / 2);
+            double x2 = c / x1;
+            answerTwo[0] = x1;
+            answerTwo[1] = x2;
+            return answerTwo;
+        }
         else
         {
-            double x1 = -(b + Math.Sign(b) * Math.Sqrt(d)) / 2;
+            double x1 = -((b + Math.Sign(b) * Math.Sqrt(d)) / 2);
             double x2 = c / x1;
             answerTwo[0] = x1;
             answerTwo[1] = x2;

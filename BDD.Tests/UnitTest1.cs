@@ -44,8 +44,16 @@ public class UnitTest1
         [Then(@"квадратное уравнение имеет два корня \((.*), (.*)\) кратности один")]
         public void ThenTwoRoots(double root1, double root2)
         {
-            Assert.Equal(root1, roots[0], precision);
-            Assert.Equal(root2, roots[1], precision);
+            if (root1 == roots[0] && root2 == roots[1])
+            {
+                Assert.Equal(root1, roots[0], precision);
+                Assert.Equal(root2, roots[1], precision);
+            }
+            else
+            {
+                Assert.Equal(root1, roots[1], precision);
+                Assert.Equal(root2, roots[0], precision);
+            }
         }
 
         [Then(@"квадратное уравнение имеет один корень (.*) кратности два")]
