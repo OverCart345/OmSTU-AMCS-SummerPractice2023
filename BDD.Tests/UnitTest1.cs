@@ -11,7 +11,7 @@ public class SolveStepDefinitions
     Exception exception = new();
     private double precision = 0.0001;
 
-    [Given(@"Квадратное уравнение с коэффициентами \((.*), (.*), (.*)\)")]
+    [Given(@"РљРІР°РґСЂР°С‚РЅРѕРµ СѓСЂР°РІРЅРµРЅРёРµ СЃ РєРѕСЌС„С„РёС†РёРµРЅС‚Р°РјРё \((.*), (.*), (.*)\)")]
     public void GivenCofficients(string p0, string p1, string p2)
     {
         double _p0 = double.Parse(p0, System.Globalization.CultureInfo.InvariantCulture);
@@ -21,7 +21,7 @@ public class SolveStepDefinitions
         array = new double[] { _p0, _p1, _p2 };
     }
 
-    [When(@"вычисляются корни квадратного уравнения")]
+    [When(@"РІС‹С‡РёСЃР»СЏСЋС‚СЃСЏ РєРѕСЂРЅРё РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ")]
     public void WhenSolvingTheRoots()
     {
         try
@@ -34,7 +34,7 @@ public class SolveStepDefinitions
         }
     }
 
-    [Then(@"квадратное уравнение имеет два корня \((.*), (.*)\) кратности один")]
+    [Then(@"РєРІР°РґСЂР°С‚РЅРѕРµ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ РґРІР° РєРѕСЂРЅСЏ \((.*), (.*)\) РєСЂР°С‚РЅРѕСЃС‚Рё РѕРґРёРЅ")]
     public void ThenHave2Solutions(double p0, double p1)
     {
         if (p0 == result[0] && p1 == result[1])
@@ -49,19 +49,19 @@ public class SolveStepDefinitions
         }
     }
 
-    [Then(@"квадратное уравнение имеет один корень (.*) кратности два")]
+    [Then(@"РєРІР°РґСЂР°С‚РЅРѕРµ СѓСЂР°РІРЅРµРЅРёРµ РёРјРµРµС‚ РѕРґРёРЅ РєРѕСЂРµРЅСЊ (.*) РєСЂР°С‚РЅРѕСЃС‚Рё РґРІР°")]
     public void ThenHave1Solutions(double p0)
     {
         Assert.Equal(p0, result[0], precision);
     }
 
-    [Then(@"множество корней квадратного уравнения пустое")]
+    [Then(@"РјРЅРѕР¶РµСЃС‚РІРѕ РєРѕСЂРЅРµР№ РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ РїСѓСЃС‚РѕРµ")]
     public void ThenHaveNoSolutions()
     {
         Assert.Empty(result);
     }
 
-    [Then(@"выбрасывается исключение ArgumentException")]
+    [Then(@"РІС‹Р±СЂР°СЃС‹РІР°РµС‚СЃСЏ РёСЃРєР»СЋС‡РµРЅРёРµ ArgumentException")]
     public void ThenThrowArgumentException()
     {
         Assert.Equal("Invalid Values", exception.Message);
