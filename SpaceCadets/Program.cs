@@ -61,28 +61,14 @@ namespace SpaceCadets
                                       .Where(g => g.GPA == cadets.Max(c => c.Mark))
                                       .ToList();
 
-                if (highestGPA.Count > 0)
-                {
-                    Console.WriteLine("Student(s) with the highest GPA:");
-                    foreach (var student in highestGPA)
-                    {
-                        Console.WriteLine("Name: " + student.Cadet);
-                        Console.WriteLine("GPA: " + student.GPA);
-                        Console.WriteLine();
-                    }
+                  
+                JObject highestGpaData = new JObject();
+                highestGpaData["Response"] = JArray.FromObject(highestGPA);
 
-                    // Создаем объект для хранения данных о студентах с наивысшим средним баллом
-                    JObject highestGpaData = new JObject();
-                    highestGpaData["Response"] = JArray.FromObject(highestGPA);
-
-                    string outputFile = args[1];
-                    File.WriteAllText(outputFile, highestGpaData.ToString());
-                    Console.WriteLine("Результаты сохранены в файл: " + outputFile);
-                }
-                else
-                {
-                    Console.WriteLine("No students found.");
-                }
+                string outputFile = args[1];
+                File.WriteAllText(outputFile, highestGpaData.ToString());
+                Console.WriteLine("Результаты сохранены в файл: " + outputFile);
+                
             }
             else if (taskName == "CalculateGPAByDiscipline")
             {
