@@ -1,0 +1,53 @@
+{
+  "taskName": "GetBestGroupsByDiscipline",
+  "data": [
+    {
+      "name": "Cadet1",
+      "group": "SC-991",
+      "discipline": "Programming",
+      "mark": 5
+    },
+    {
+      "name": "Cadet2",
+      "group": "SC-991",
+      "discipline": "Programming",
+      "mark": 3
+    },
+    {
+      "name": "Cadet1",
+      "group": "SC-991",
+      "discipline": "Algebra",
+      "mark": 5
+    },
+    {
+      "name": "Cadet2",
+      "group": "SC-991",
+      "discipline": "Algebra",
+      "mark": 4
+    },
+    {
+      "name": "Cadet3",
+      "group": "SC-992",
+      "discipline": "Programming",
+      "mark": 4
+    },
+    {
+      "name": "Cadet4",
+      "group": "SC-992",
+      "discipline": "Programming",
+      "mark": 5
+    },
+    {
+      "name": "Cadet3",
+      "group": "SC-992",
+      "discipline": "Algebra",
+      "mark": 3
+    },
+    {
+      "name": "Cadet4",
+      "group": "SC-992",
+      "discipline": "Algebra",
+      "mark": 5
+    }
+  ]
+}
