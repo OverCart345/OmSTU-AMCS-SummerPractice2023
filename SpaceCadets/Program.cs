@@ -56,15 +56,24 @@ namespace SpaceCadets
                                       .Select(g => new
                                       {
                                           Cadet = g.Key,
-                                          GPA = g.Average(c => c.Mark).ToString()
+                                          GPA = g.Average(c => c.Mark)
                                       })
-                                      .OrderByDescending(g => g.GPA)
-                                      .FirstOrDefault();
+                                      .Where(g => g.GPA == cadets.Max(c => c.Mark))
+                                      .ToList();
 
-                if (highestGPA != null)
+                if (highestGPA.Count > 0)
                 {
+                    Console.WriteLine("Student(s) with the highest GPA:");
+                    foreach (var student in highestGPA)
+                    {
+                        Console.WriteLine("Name: " + student.Cadet);
+                        Console.WriteLine("GPA: " + student.GPA);
+                        Console.WriteLine();
+                    }
+
+                    // Создаем объект для хранения данных о студентах с наивысшим средним баллом
                     JObject highestGpaData = new JObject();
-                    highestGpaData["Response"] = JArray.FromObject(new[] { highestGPA });
+                    highestGpaData["Response"] = JArray.FromObject(highestGPA);
 
                     string outputFile = args[1];
                     File.WriteAllText(outputFile, highestGpaData.ToString());

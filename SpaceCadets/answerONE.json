@@ -2,7 +2,11 @@
   "Response": [
     {
       "Cadet": "Cadet1",
-      "GPA": "5"
+      "GPA": 5.0
+    },
+    {
+      "Cadet": "Cadet4",
+      "GPA": 5.0
     }
   ]
 }
