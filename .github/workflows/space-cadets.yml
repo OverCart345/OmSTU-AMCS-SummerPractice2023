@@ -1,0 +1,25 @@
+name: space cadets test
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore SpaceCadets
+
+      - name: Build
+        run: dotnet build SpaceCadets --no-restore /p:ContinuousIntegrationBuild=true
+
+      - name: Test
+        run: ./SpaceCadetsTests ./SpaceCadets/bin/Debug/net7.0/SpaceCadets
